@@ -10,8 +10,11 @@ void primeGenerate(){
 	
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 4d00b892b938d3d49bcfd6ad8df4d0dab851aeba
 int main(){
 	int number;
 	int testcases;
