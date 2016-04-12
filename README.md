@@ -139,14 +139,31 @@ which has been listed:
 | Fermat's factorization method |fermatfactor_trivial.py  |fermatfactor_improved_prime.py|
 | Pollard's rho algorithm 		|Pollards_rho_trivial.py  |Pollards_rho_improved_prime.py|
 
+
+Anything else you deem relevant.
+------
+1 I used the trivial prime:
+	which judge if a number is a prime.
+
+2 I used another prime test called Miller-Rabin primality test:
+	which is much quicker and I have referenced in all my test cases. Prime test is correct.
+
 Reference
 ------
 http://www.bigprimes.net/archive/prime/10/
+
 https://rosettacode.org/wiki/Miller–Rabin_primality_test#Python:_Probably_correct_answers
+
 https://en.wikipedia.org/wiki/Integer_factorization
+
 https://en.wikipedia.org/wiki/Trial_division
+
 https://en.wikipedia.org/wiki/Fermat%27s_factorization_method
+
 https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm
+
 https://en.wikipedia.org/wiki/Euler%27s_factorization_method
+
 http://mathworld.wolfram.com/PollardRhoFactorizationMethod.html
+
 http://kadinumberprops.blogspot.ca/2012/11/fermats-factorization-running-time.html
