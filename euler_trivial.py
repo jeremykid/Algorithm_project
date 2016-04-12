@@ -47,27 +47,30 @@ def gcd(a,b):
 		a = b
 		b = temp
 	return a
-
+def perfectsquare(n):
+    return n % n**0.5 == 0
 def find2sqrtroot(number):
-	largest = int(math.sqrt(number))
+	largest = int(math.sqrt(number//2))
 	result = []
 	length = 0
 	# print number,largest
-	for i in range(largest//2+1):
+	for i in range(largest+1):
 		temp2 = number - i*i
-		temp = int(math.sqrt(temp2))
-		if (temp**2 == temp2):
+		if (perfectsquare(temp2)):
 			result.append(i)
-			result.append(temp)
+			result.append(math.sqrt(temp2))
 			length+=1
-		if (length == 2):
-			break
+			if (length == 2):
+				break
 	return result
 
 def euler(number):
+	timeC = time.time()
 	result = find2sqrtroot(number)
-	# print (number)
-	# print (result)
+	timeD = time.time()
+	global timeinroot2
+	timeinroot2 = timeinroot2 + timeD - timeC
+
 	if (len(result) != 4):
 		# print (number)
 		temp = trial_division(number)
@@ -96,15 +99,18 @@ def euler(number):
 
 def main():
 	global prime_factors
+	global timeinroot2
 
 	testcases = int(input("Testcases"))
 	for i in range(testcases):
 		prime_factors = []
+		timeinroot2 = 0
 		timeA = time.time()
 		number = int(input("number:"))
 		# print find2sqrtroot(number)
 		euler(number)
 		print (prime_factors)
 		timeB = time.time()
-		print (timeB - timeA)
+		print (timeinroot2)
+		print (timeB - timeA - timeinroot2)
 main()

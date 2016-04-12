@@ -110,7 +110,7 @@ def fermat(number):
 	
 	another = number//temp
 	if(is_probable_prime(another)):
-		prime_factors.extend(another)
+		prime_factors.append(another)
 	else:
 		fermat(another)
 	return
