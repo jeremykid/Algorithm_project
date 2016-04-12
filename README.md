@@ -143,8 +143,10 @@ Reference
 ------
 http://www.bigprimes.net/archive/prime/10/
 https://rosettacode.org/wiki/Miller–Rabin_primality_test#Python:_Probably_correct_answers
+https://en.wikipedia.org/wiki/Integer_factorization
+https://en.wikipedia.org/wiki/Trial_division
 https://en.wikipedia.org/wiki/Fermat%27s_factorization_method
-http://kadinumberprops.blogspot.ca/2012/11/fermats-factorization-running-time.html
 https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm
-http://mathworld.wolfram.com/PollardRhoFactorizationMethod.html
 https://en.wikipedia.org/wiki/Euler%27s_factorization_method
+http://mathworld.wolfram.com/PollardRhoFactorizationMethod.html
+http://kadinumberprops.blogspot.ca/2012/11/fermats-factorization-running-time.html
