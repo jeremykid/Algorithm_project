@@ -1,3 +1,6 @@
+import Miller_Rabin_primality_test
+
+
 import math
 import time
 
@@ -65,8 +68,16 @@ def pollard(number):
 		cycle_size *= 2
 		x_fixed = x
 
-	prime_factors.extend(trial_division(factor))
-	pollard(number//factor)
+	if (Miller_Rabin_primality_test.is_probable_prime(factor)):
+		prime_factors.extend(trial_division(factor))
+	else:
+		pollard(factor)
+	another = number//factor
+	if (Miller_Rabin_primality_test.is_probable_prime(another)):
+		prime_factors.extend(trial_division(another))
+
+	else:
+		pollard(another)
 
 def main():
 

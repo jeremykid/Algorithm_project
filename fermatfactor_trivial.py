@@ -48,8 +48,7 @@ def remove2(number):
 	return number
 
 def fermat(number):
-
-
+	number = remove2(number)
 	a = math.ceil(math.sqrt(number))
 	b = a*a - number
 	while (int(math.sqrt(b))**2 != b):
@@ -70,7 +69,6 @@ def main():
 		timeA = time.time()
 		number = int(input("number:"))
 		# print find2sqrtroot(number)
-		number = remove2(number)
 		fermat(number)
 		print prime_factors
 		timeB = time.time()
