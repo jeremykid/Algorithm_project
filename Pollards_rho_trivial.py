@@ -5,27 +5,27 @@ import math
 import time
 
 def primeGenerate(number):
-	largest = number
-	# largest = int(math.sqrt(number)+1)
-	prime_list = largest*[1]
-	if (number<4):
-		return [2,3]
-	prime_list[1] = 0
-	for i in range(0,largest,2):
-		prime_list[i] = 0
-	
-	prime_list[2] = 1
-	for i in range(3,largest,2):
-		if (prime_list[i] == 1):
-			for j in range(2*i,largest,i):
-				prime_list[j] == 1
-			
-	result = []
-	for i in range(0,number):
-		if(prime_list[i] == 1):
-			result.append(i)
+    largest = number
+    # largest = int(math.sqrt(number)+1)
+    prime_list = largest*[1]
+    if (number<4):
+        return [2,3]
+    prime_list[1] = 0
+    for i in range(0,largest,2):
+        prime_list[i] = 0
+    
+    prime_list[2] = 1
+    for i in range(3,largest,2):
+        if (prime_list[i] == 1):
+            for j in range(2*i,largest,i):
+                prime_list[j] == 1
+            
+    result = []
+    for i in range(0,number):
+        if(prime_list[i] == 1):
+            result.append(i)
 
-	return result
+    return result
 
 def trial_division(n):
     """Return a list of the prime factors for a natural number."""
@@ -36,7 +36,7 @@ def trial_division(n):
 
     for p in temp:
         if p*p > n: 
-        	break
+            break
         while n % p == 0:
             prime_factors_list.append(p)
             n //= p
@@ -45,49 +45,44 @@ def trial_division(n):
     return prime_factors_list
 
 def gcd(a,b):
-	while (b != 0):
-		temp = a%b
-		a = b
-		b = temp
-	return a
+    while (b != 0):
+        temp = a%b
+        a = b
+        b = temp
+    return a
 
 def pollard(number):
-	if (number == 1):
-		# print prime_factors
-		return 1
-	x_fixed = 2
-	cycle_size = 2
-	x = 2
-	factor = 1;
-	while (factor == 1):
-		count = 1
-		while (count <= cycle_size and factor <= 1):
-			count += 1
-			x = (x*x+1)%number
-			factor = gcd(x-x_fixed, number)
-		cycle_size *= 2
-		x_fixed = x
+    if (number == 1):
+        # print prime_factors
+        return 1
+    x_fixed = 2
+    cycle_size = 2
+    x = 2
+    factor = 1;
+    while (factor == 1):
+        count = 1
+        while (count <= cycle_size and factor <= 1):
+            count += 1
+            x = (x*x+1)%number
+            factor = gcd(x-x_fixed, number)
+        cycle_size *= 2
+        x_fixed = x
 
-	if (Miller_Rabin_primality_test.is_probable_prime(factor)):
-		prime_factors.extend(trial_division(factor))
-	else:
-		pollard(factor)
-	another = number//factor
-	if (Miller_Rabin_primality_test.is_probable_prime(another)):
-		prime_factors.extend(trial_division(another))
-	else:
-		pollard(another)
+    # if (Miller_Rabin_primality_test.is_probable_prime(factor)):
+    prime_factors.extend(trial_division(factor))
+
+    another = number//factor
+    prime_factors.extend(trial_division(another))
 
 def runner():
-
     testcases = int(input("How many Testcases: "))
-	for i in range(testcases):
-		number = int(input("number : "))
-		global prime_factors
-		timeA = time.time()
-		prime_factors = []
-		pollard(number)
-		print prime_factors
-		timeB = time.time()
-		print (timeB - timeA)
+    for i in range(testcases):
+        number = int(input("number : "))
+        global prime_factors
+        timeA = time.time()
+        prime_factors = []
+        pollard(number)
+        print prime_factors
+        timeB = time.time()
+        print (timeB - timeA)
 

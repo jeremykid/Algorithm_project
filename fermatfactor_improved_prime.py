@@ -69,10 +69,10 @@ def is_probable_prime(n):
  
     # test the base a to see whether it is a witness for the compositeness of n
     def try_composite(a):
-    	# print (a,d,n)
-    	# print pow(a,d,n)
+        # print (a,d,n)
+        # print pow(a,d,n)
         if __builtin__.pow(int(a), int(d), int(n)) == 1:
-       	# if (a**d)%n ==1:
+        # if (a**d)%n ==1:
             return False
         for i in range(s):
             if __builtin__.pow(int(a), int(2**i * d), int(n)) == n-1:
@@ -89,42 +89,42 @@ def is_probable_prime(n):
 
 
 def remove2(number):
-	while (number == number//2*2):
-		prime_factors.append(2)
-		number = number//2
-	return number
+    while (number == number//2*2):
+        prime_factors.append(2)
+        number = number//2
+    return number
 
 def fermat(number):
-	number = remove2(number)
-	a = ceil(sqrt(number))
-	b = a*a - number
-	while (int(sqrt(b))**2 != b):
-		a = a+1
-		b = a*a - number
-	temp = int(a-int(sqrt(b)))
-	# prime_factors.append(temp)
-	if (is_probable_prime(temp)):
-		prime_factors.append(temp)
-	else:
-		fermat(temp)
-	
-	another = number//temp
-	if(is_probable_prime(another)):
-		prime_factors.append(another)
-	else:
-		fermat(another)
-	return
+    number = remove2(number)
+    a = ceil(sqrt(number))
+    b = a*a - number
+    while (int(sqrt(b))**2 != b):
+        a = a+1
+        b = a*a - number
+    temp = int(a-int(sqrt(b)))
+    # prime_factors.append(temp)
+    if (is_probable_prime(temp)):
+        prime_factors.append(temp)
+    else:
+        fermat(temp)
+    
+    another = number//temp
+    if(is_probable_prime(another)):
+        prime_factors.append(another)
+    else:
+        fermat(another)
+    return
 
 def runner():
-	global prime_factors
+    global prime_factors
 
     testcases = int(input("How many Testcases: "))
-	for i in range(testcases):
-		prime_factors = []
-		timeA = time.time()
-		number = int(input("number:"))
-		# print find2sqrtroot(number)
-		fermat(number)
-		print prime_factors
-		timeB = time.time()
-		print (timeB - timeA)
+    for i in range(testcases):
+        prime_factors = []
+        timeA = time.time()
+        number = int(input("number:"))
+        # print find2sqrtroot(number)
+        fermat(number)
+        print prime_factors
+        timeB = time.time()
+        print (timeB - timeA)

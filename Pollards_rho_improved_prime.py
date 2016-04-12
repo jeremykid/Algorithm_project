@@ -34,7 +34,6 @@ def pollard(number):
     another = number//factor
     if (Miller_Rabin_primality_test.is_probable_prime(another)):
         prime_factors.append(another)
-
     else:
         pollard(another)
 
