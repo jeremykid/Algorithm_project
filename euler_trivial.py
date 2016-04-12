@@ -97,11 +97,11 @@ def euler(number):
 		euler(factor2)
  		
 
-def main():
+def runner():
 	global prime_factors
 	global timeinroot2
 
-	testcases = int(input("Testcases"))
+    testcases = int(input("How many Testcases: "))
 	for i in range(testcases):
 		prime_factors = []
 		timeinroot2 = 0
@@ -113,4 +113,3 @@ def main():
 		timeB = time.time()
 		print (timeinroot2)
 		print (timeB - timeA - timeinroot2)
-main()

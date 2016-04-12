@@ -75,13 +75,12 @@ def pollard(number):
 	another = number//factor
 	if (Miller_Rabin_primality_test.is_probable_prime(another)):
 		prime_factors.extend(trial_division(another))
-
 	else:
 		pollard(another)
 
-def main():
+def runner():
 
-	testcases = int(input("testcases: "))
+    testcases = int(input("How many Testcases: "))
 	for i in range(testcases):
 		number = int(input("number : "))
 		global prime_factors
@@ -92,4 +91,3 @@ def main():
 		timeB = time.time()
 		print (timeB - timeA)
 
-main()

@@ -41,12 +41,11 @@ def trial_division(n):
     return prime_factors
 
 
-def main():
-	testcases = int(input("Testcases"))
+def runner():
+    testcases = int(input("How many Testcases: "))
 	for i in range(testcases):
 		timeA = time.time()
 		number = int(input("number:"))
 		print trial_division(number)
 		timeB = time.time()
 		print (timeB - timeA)
-main()

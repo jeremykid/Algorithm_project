@@ -27,7 +27,6 @@ def pollard(number):
             factor = gcd(x-x_fixed, number)
         cycle_size *= 2
         x_fixed = x
-
     if (Miller_Rabin_primality_test.is_probable_prime(factor)):
         prime_factors.append(factor)
     else:
@@ -40,11 +39,10 @@ def pollard(number):
         pollard(another)
 
 
-def main():
-
-    testcases = int(input("testcases: "))
+def runner():
+    testcases = int(input("How many Testcases: "))
     for i in range(testcases):
-        number = int(input("number : "))
+        number = int(input("Number : "))
         global prime_factors
         timeA = time.time()
         prime_factors = []
@@ -53,4 +51,3 @@ def main():
         timeB = time.time()
         print (timeB - timeA)
 
-main()

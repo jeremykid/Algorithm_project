@@ -7,7 +7,7 @@ integer factorization algorithm
 | Trial division(baseline)      |trial_division.py 		  |note0 					 	 |
 | Euler's factorization method  |euler_trivial.py note2   |note1						 |
 | Fermat's factorization method |fermatfactor_trivial.py  |fermatfactor_improved_prime.py|
-| Pollard's rho algorithm 		|Pollards_rho_trivial.py  |Pollards_rho_improved_prime.py|
+| Pollard's rho algorithm 		|Pollards_rho_trivial.py  |Pollards_rho_improved_prime.py|note3
 
 * note0 : Trivial Division use the trivial prime, which cannot use Miller-Rabin primality test
 * note1 : Euler's factorization method stops the algorithm
@@ -15,8 +15,11 @@ integer factorization algorithm
 		  Miller-Rabin is only judge the prime not find the factors.
 * note2 : Since I have not find a better way to find a number = a^2 + b^2 = c^2 + d^2. 
 		  So Euler's spend on the this function I will list after that 
+* note3 : In Pollards_rho Miller-Rabin primality test there is some special case will have 	
+		  RuntimeError: maximum recursion depth exceeded
 
-# 1 Integer factorization:
+
+#Integer factorization:
 
 ### 1.1
 Trial division: (Baseline)
@@ -24,10 +27,32 @@ This is a base line in my integer factorization algorithm project. It is using
 a prime sieve for prime number generation which can judge a number is a prime or 
 continue do factorization.
 
-Running time: in the worst case it is \pi(2^{n/2}) \approx {2^{n/2} \over \left(\frac{n}{2}\right)  \ln 2}  
+Running time: in the worst case it is O(2^(n/2)/((n/2)*ln2)) 
+* n is base-2 n digit number.
 
 ### 1.2
 Euler's factorization method:
+This is an implementation factorization algorithm, which solves the following problem. Given an number, then find all prime factors. The base knowledge of Euler's factorization is if 
+a number = a^2 + b^2 = c^2 + d^2. There is a quickly way to seperate into 2 factors.
+
+Running time: It is very slow, worst case is greater than trial division,
+only quick in some special cases and has potient quick.
+
+### 1.3
+Fermat's factorization method:
+This is an implementation factorization algorithm, which solves the following problem. Given an number, then find all prime factors. The base knowledge of Fermat's factorization method:
+ is if a number = a^2 - b^2 There is a quickly way to seperate into 2 factors.
+
+Running time: Worst case is O(N^{1/2})  
+			  General case is O(N^{1/3}) time.
+
+### 1.4
+Pollard's rho algorithm:
+This is an implementation factorization algorithm, which solves the following problem. Given an number, then find all prime factors. The base knowledge of Pollard's rho algorithm is if a find 
+the abs(x^2+1-x) mod N if not 1 then it is a factor of N.
+
+Running time: General case by the Birthday paradox in O(\sqrt p)\ <= O(n^{1/4})
+			  but this is a heuristic claim, and rigorous analysis of the algorithm remains open.
 
 2 Experiment Result
 ------
@@ -95,10 +120,22 @@ The testcases: 13*17*2*1123*1426499*5 = 3540328013170
 | Fermat's factorization method |3.39200806618 		  	  |2.18938994408 				 |
 | Pollard's rho algorithm 		|0.00471496582031         |0.00225687026978		 		 |
 
-3 Algorithm
+3 How to run the code:
 ------
+There is a easy way to run by 
+```python runner.py```
+Then following the introduction. 
 
+Or 
 
+You can runner each single file
+which has been listed:
+| Algorithm        				| trivial prime           | Miller-Rabin primality test  |
+| ----------------------------- |:-----------------------:| ----------------------------:|
+| Trial division(baseline)      |trial_division.py 		  |note0 					 	 |
+| Euler's factorization method  |euler_trivial.py note2   |note1						 |
+| Fermat's factorization method |fermatfactor_trivial.py  |fermatfactor_improved_prime.py|
+| Pollard's rho algorithm 		|Pollards_rho_trivial.py  |Pollards_rho_improved_prime.py|
 
 Reference
 ------

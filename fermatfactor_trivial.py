@@ -60,10 +60,10 @@ def fermat(number):
 	prime_factors.extend(trial_division(number//temp))
 	return
 
-def main():
+def runner():
 	global prime_factors
 
-	testcases = int(input("Testcases"))
+    testcases = int(input("How many Testcases: "))
 	for i in range(testcases):
 		prime_factors = []
 		timeA = time.time()
@@ -73,4 +73,3 @@ def main():
 		print prime_factors
 		timeB = time.time()
 		print (timeB - timeA)
-main()
