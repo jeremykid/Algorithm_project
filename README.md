@@ -113,6 +113,7 @@ The testcases: 13*127*263*419*17*131*269 = 108990674873561
 
 ###3.2
 The testcases: 13*17*2*1123*1426499*5 = 3540328013170
+
 | Algorithm        				| trivial prime           | Miller-Rabin primality test  |
 | ----------------------------- |:-----------------------:| ----------------------------:|
 | Trial division(baseline)      |4.11624193192 		  	  |null 					 	 |
@@ -130,6 +131,7 @@ Or
 
 You can runner each single file
 which has been listed:
+
 | Algorithm        				| trivial prime           | Miller-Rabin primality test  |
 | ----------------------------- |:-----------------------:| ----------------------------:|
 | Trial division(baseline)      |trial_division.py 		  |note0 					 	 |
