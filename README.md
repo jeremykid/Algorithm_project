@@ -2,12 +2,12 @@ integer factorization algorithm
 ======
 1 Introduction
 ------
-| Algorithm        				| trivial prime           | Miller-Rabin primality test  |
+| Algorithm        				      | trivial prime           | Miller-Rabin primality test  |
 | ----------------------------- |:-----------------------:| ----------------------------:|
-| Trial division(baseline)      |trial_division.py 		  |note0 					 	 |
-| Euler's factorization method  |euler_trivial.py note2   |note1						 |
+| Trial division(baseline)      |trial_division.py 		    |note0 					 	             |
+| Euler's factorization method  |euler_trivial.py note2   |note1						             |
 | Fermat's factorization method |fermatfactor_trivial.py  |fermatfactor_improved_prime.py|
-| Pollard's rho algorithm 		|Pollards_rho_trivial.py  |Pollards_rho_improved_prime.py|note3
+| Pollard's rho algorithm 		  |Pollards_rho_trivial.py  |Pollards_rho_improved_prime.py|note3
 
 * note0 : Trivial Division use the trivial prime, which cannot use Miller-Rabin primality test
 * note1 : Euler's factorization method stops the algorithm
@@ -15,9 +15,8 @@ integer factorization algorithm
 		  Miller-Rabin is only judge the prime not find the factors.
 * note2 : Since I have not find a better way to find a number = a^2 + b^2 = c^2 + d^2. 
 		  So Euler's spend on the this function I will list after that 
-* note3 : In Pollards_rho Miller-Rabin primality test there is some special case will have 	
-		  RuntimeError: maximum recursion depth exceeded
-
+* note3 : In Pollards_rho Miller-Rabin primality test, inorder to handle some base cases. I use the 
+          trial_division to handle some special cases.
 
 #Integer factorization:
 
@@ -60,20 +59,20 @@ Running time: General case by the Birthday paradox in O(\sqrt p)\ <= O(n^{1/4})
 ###1.1
 The testcases: 15485867*32452867 = 502560782130689
 
-| Algorithm        				| trivial prime           | Miller-Rabin primality test  |
+| Algorithm        				      | trivial prime           | Miller-Rabin primality test  |
 | ----------------------------- |:-----------------------:| ----------------------------:|
-| Trial division(baseline)      |31.0308229923 		  	  |null 					 	 |
-| Euler's factorization method  |32.3473279476+3.276534002|null							 |
-| Fermat's factorization method |2.5645339489  			  |3.19916701317 				 |
-| Pollard's rho algorithm 		|0.0414018630981          |0.0358607769012 				 |
+| Trial division(baseline)      |31.0308229923 		  	    |null 					 	             |
+| Euler's factorization method  |32.3473279476+3.276534002|null							             |
+| Fermat's factorization method |2.5645339489  			      |3.19916701317 				         |
+| Pollard's rho algorithm 		  |0.0414018630981          |0.0358607769012 				       |
 
 ###1.2
 The testcases: 15487019*15487469 = 239854726664911
 
-| Algorithm        				| trivial prime           | Miller-Rabin primality test  |
+| Algorithm                     | trivial prime           | Miller-Rabin primality test  |
 | ----------------------------- |:-----------------------:| ----------------------------:|
-| Trial division(baseline)      |22.700715065 		  	  |null 					 	 |
-| Euler's factorization method  |21.358424902+3.0871624554|null							 |
+| Trial division(baseline)      |22.700715065 		  	    |null 					 	             |
+| Euler's factorization method  |21.358424902+3.0871624554|null							             |
 | Fermat's factorization method |3.99884200096  		  |2.206387043					 |
 | Pollard's rho algorithm 		|0.0165410041809          |0.0110921859741 				 |
 
@@ -126,6 +125,22 @@ The testcases: 13 * 17 * 2 * 1123 * 1426499 * 5 = 3540328013170
 There is a easy way to run by 
 ```python runner.py```
 Then following the introduction. 
+
+Firstly, you will see this introduction format.
+```
+integer factorization algorithm
+type the number you want to run the algorithm
+eg: 1
+then will run the Trial division
+1.Trial division
+2.Euler's factorization method
+3.Fermat's factorization method
+4.Pollard's rho algorithm 
+input the number:
+```
+Then input the id of factorization method.
+
+for the 3rd and 4th, you also need to choose the id of the prime generate method.
 
 runner.py 
   -|----1 "Trial division"----|---"type number of testcases"
