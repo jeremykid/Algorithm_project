@@ -141,7 +141,7 @@ input the number:
 Then input the id of factorization method.
 
 for the 3rd and 4th, you also need to choose the id of the prime generate method.
-
+```
 runner.py 
   -+----1 "Trial division"----+---"type number of testcases"
    |					      +---"input the number which needs factorization"
@@ -169,6 +169,7 @@ runner.py
     								  +---2 "Miller-Rabin primality test"
     								  	 	+---"type number of testcases"
     									    +---"input the number which needs factorization"
+```
 Or 
 
 You can runner each single file
