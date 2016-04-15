@@ -1,4 +1,4 @@
-# import numpy
+# referenced from online 
 
 from math import ceil,sqrt
 import time
@@ -7,8 +7,9 @@ import __builtin__
 import random
 # from math import *
 _mrpt_num_trials = 5 # number of bases to test
- 
-def is_probable_prime(n):
+
+def is_probable_prime(n): 
+
     """
     Miller-Rabin primality test.
  

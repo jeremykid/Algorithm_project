@@ -53,9 +53,12 @@ the abs(x^2+1-x) mod N if not 1 then it is a factor of N.
 Running time: General case by the Birthday paradox in O(\sqrt p)\ <= O(n^{1/4})
 			  but this is a heuristic claim, and rigorous analysis of the algorithm remains open.
 
-2 Experiment Result
+2 A description of what sort of tests I have included
 ------
-# 1 St: 2 primes product each prime > million
+# 1 St: 2 primes production (each prime > million)
+
+When the prime is very big, test the speed of each methods.
+
 ###1.1
 The testcases: 15485867*32452867 = 502560782130689
 
@@ -76,7 +79,19 @@ The testcases: 15487019*15487469 = 239854726664911
 | Fermat's factorization method |3.99884200096  		  |2.206387043					 |
 | Pollard's rho algorithm 		|0.0165410041809          |0.0110921859741 				 |
 
-# 2 nd: 4 primes product each prime between[1000,9999]
+###1.3
+The testcases: 15490781*67869427 = 1051350430252487
+
+| Algorithm                     | trivial prime           | Miller-Rabin primality test  |
+| ----------------------------- |:-----------------------:| ----------------------------:|
+| Trial division(baseline)      |53.9460468292            |null                          |
+| Euler's factorization method  |47.7404336929+8.194948196|null                          |
+| Fermat's factorization method |8.05504488945            |9.30907988548           |
+| Pollard's rho algorithm       |0.0999021530151          |0.0918011665344         |
+
+# 2 nd: 4 primes production (each prime between[1000,9999])
+
+When the prime is big and more factors, test the speed of each methods.
 
 ###2.1
 The testcases: 8147 * 8369 * 8623 * 7127 = 4190216175859403
@@ -86,7 +101,7 @@ The testcases: 8147 * 8369 * 8623 * 7127 = 4190216175859403
 | Trial division(baseline)      |109.196480989 		  	  |null 					 	 |
 | Euler's factorization method  |105.0888099666+5.89233399|null							 |
 | Fermat's factorization method |2.5645339489  			  |3.19916701317 				 |
-| Pollard's rho algorithm 		|0.0414018630981          |0.0358607769012 				 |
+| Pollard's rho algorithm 		  |0.0414018630981          |0.0358607769012 				 |
 
 ###2.2
 The testcases: 1259 * 1451 * 1613 * 1811 = 5336370322687
@@ -96,9 +111,21 @@ The testcases: 1259 * 1451 * 1613 * 1811 = 5336370322687
 | Trial division(baseline)      |2.96865296364 		  	  |null 					 	 |
 | Euler's factorization method  |3.3992729187+0.5768110752|null							 |
 | Fermat's factorization method |5.54617881775  	      |3.116948843 				 	 |
-| Pollard's rho algorithm 		|0.00448799133301         |0.00167012214661 		 	 |
+| Pollard's rho algorithm 		  |0.00448799133301         |0.00167012214661 		 	 |
+
+###2.3
+The testcases: 6277 * 5351 * 8831 * 9733 = 2886979418455921
+
+| Algorithm                     | trivial prime           | Miller-Rabin primality test  |
+| ----------------------------- |:-----------------------:| ----------------------------:|
+| Trial division(baseline)      |77.4180650711          |null              |
+| Euler's factorization method  |72.7111520767+13.2122049|null              |
+| Fermat's factorization method |2.87196207047          |3.24289989471           |
+| Pollard's rho algorithm       |0.479516983032         |0.00454497337341        |
 
 # 3 rd: over 6 small prime product
+
+When the prime is not that big, but we have more factors for the number which need to be factorization.
 
 ###3.1
 The testcases: 13 * 127 * 263 * 419 * 17 * 131 * 269 = 108990674873561
@@ -108,7 +135,7 @@ The testcases: 13 * 127 * 263 * 419 * 17 * 131 * 269 = 108990674873561
 | Trial division(baseline)      |12.9187300205 		  	  |null 					 	 |
 | Euler's factorization method  |12.9247641563+2.445067882|null							 |
 | Fermat's factorization method |3.29201412201  		  |2.98240017891 				 |
-| Pollard's rho algorithm 		|0.00494313240051         |0.00559782981873 			 |
+| Pollard's rho algorithm 		  |0.00494313240051         |0.00559782981873 			 |
 
 ###3.2
 The testcases: 13 * 17 * 2 * 1123 * 1426499 * 5 = 3540328013170
@@ -119,6 +146,16 @@ The testcases: 13 * 17 * 2 * 1123 * 1426499 * 5 = 3540328013170
 | Euler's factorization method  |4.38335967064+0.452334165|null							 |
 | Fermat's factorization method |3.39200806618 		  	  |2.18938994408 				 |
 | Pollard's rho algorithm 		|0.00471496582031         |0.00225687026978		 		 |
+
+###3.3
+The testcases: 547 * 701 * 29 * 149 * 5 * 2 = 16568744870
+
+| Algorithm               | trivial prime           | Miller-Rabin primality test  |
+| ----------------------------- |:-----------------------:| ----------------------------:|
+| Trial division(baseline)      |3.92766094208          |null              |
+| Euler's factorization method  |2.42819094658+0.031641006|null              |
+| Fermat's factorization method |3.00680112839          |4.95704817772         |
+| Pollard's rho algorithm       |0.0637471675873         |0.000675916671753        |
 
 3 How to run the code:
 ------

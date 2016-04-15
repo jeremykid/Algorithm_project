@@ -1,3 +1,5 @@
+import Miller_Rabin_primality_test
+
 # import numpy
 
 from math import ceil,sqrt
@@ -103,13 +105,13 @@ def fermat(number):
         b = a*a - number
     temp = int(a-int(sqrt(b)))
     # prime_factors.append(temp)
-    if (is_probable_prime(temp)):
+    if (Miller_Rabin_primality_test.is_probable_prime(temp)):
         prime_factors.append(temp)
     else:
         fermat(temp)
     
     another = number//temp
-    if(is_probable_prime(another)):
+    if (Miller_Rabin_primality_test.is_probable_prime(another)):
         prime_factors.append(another)
     else:
         fermat(another)
