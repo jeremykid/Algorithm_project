@@ -143,32 +143,32 @@ Then input the id of factorization method.
 for the 3rd and 4th, you also need to choose the id of the prime generate method.
 
 runner.py 
-  -|----1 "Trial division"----|---"type number of testcases"
-   |					      |---"input the number which needs factorization"
+  -+----1 "Trial division"----+---"type number of testcases"
+   |					      +---"input the number which needs factorization"
    |						  
    |
-   |----2 "Euler's factorization method"---|---"type number of testcases"
-   |									   |---"input the number which needs factorization"
+   +----2 "Euler's factorization method"---+---"type number of testcases"
+   |									   +---"input the number which needs factorization"
    |
    |
-   |----3 "Fermat's factorization method"---|---"type the prime generate method"
-   |									    |---1 "trivial prime"
-   |										|	 |---"type number of testcases"
-   |									    |    |---"input the number which needs factorization"
+   +----3 "Fermat's factorization method"---+---"type the prime generate method"
+   |									    +---1 "trivial prime"
+   |										  +	   +---"type number of testcases"
+   |									    |    +---"input the number which needs factorization"
    |									    |
-   |									    |---2 "Miller-Rabin primality test"
-   |											 |---"type number of testcases"
-   |									         |---"input the number which needs factorization"
+   |									    +---2 "Miller-Rabin primality test"
+   |											 +---"type number of testcases"
+   |									         +---"input the number which needs factorization"
    |
    |
-   |----4 "Pollard's rho algorithm"---|---"type the prime generate method"
-    								  |---1 "trivial prime"
-    						  		  |	    |---"type number of testcases"
-    								  |     |---"input the number which needs factorization"
-    						     	  |
-    								  |---2 "Miller-Rabin primality test"
-    								  	 	|---"type number of testcases"
-    									    |---"input the number which needs factorization"
+   +----4 "Pollard's rho algorithm"---+---"type the prime generate method"
+    								  +---1 "trivial prime"
+    						  		|	    +---"type number of testcases"
+    								  |     +---"input the number which needs factorization"
+    						     	|
+    								  +---2 "Miller-Rabin primality test"
+    								  	 	+---"type number of testcases"
+    									    +---"input the number which needs factorization"
 Or 
 
 You can runner each single file
